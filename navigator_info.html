@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>navigator info</title>
+  <style type="text/css">
+  .item{
+    margin:5px 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="info">
+
+  </div>
+  <script type="text/javascript">
+    var info = navigator
+    console.log('info',info)
+    function createInfoItem(key,value){
+      return '<div class="item"><span>'+key+'</span>:<span>'+value+'</span></div>'
+    }
+    var infoHtml = []
+    for(var key in info){
+      infoHtml.push(createInfoItem(key,info[key]))
+    }
+    document.querySelector('#info').innerHTML = infoHtml.join('\n')
+  </script>
+</body>
+</html>
